@@ -15,15 +15,17 @@ const InputForm = (props) => {
 
     const submitHandler = (event) => {
         event.preventDefault();
-        return props.onSubmit(name, age);
+        props.onSubmit(name, age);
+        setName('');
+        setAge('');
     }
 
     return (
         <form onSubmit={submitHandler}>
-            <div>
-                <input type='text' placeholder='Enter a name' onChange={nameChangeHandler} />
-                <input type='number' placeholder='Enter age' onChange={ageChangeHandler} />
-                <button type='submit'>Submit</button>
+            <div className='div-css'>
+                <input className='input-css' type='text' placeholder='Enter a name' value={name} onChange={nameChangeHandler} />
+                <input className='input-css' type='number' placeholder='Enter age' value={age} onChange={ageChangeHandler} />
+                <button className='button-css' type='submit'>Submit</button>
             </div>
         </form>
     )

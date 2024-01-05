@@ -3,12 +3,12 @@ import './DisplayList.css';
 
 const DisplayList = (props) => {
     return (
-        <div>
+        <div className='div-list'>
             {props.data.map(item => (
-                <ul key={item.id}>
-                    <li>
+                <ul className='ul-css' key={item.id}>
+                    <li className='li-css'>
                         {item.name} ({item.age} years old)
-                        <button style={{ marginLeft: '20px' }} onClick={() => props.onDelete(item.id)}>Delete</button>
+                        <button className='button-css' style={{ marginLeft: '20px' }} onClick={() => props.onDelete(item.id)}>Delete</button>
                     </li>
                 </ul>
             ))}
